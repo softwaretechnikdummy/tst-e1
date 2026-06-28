@@ -11,7 +11,7 @@ public class ShoppingCart {
     	}
 		
 		for(int i = 0; i < entries.size(); i++) {
-			if (entries.get(i).product.name == product.name) {
+			if (entries.get(i).product.GetName() == product.GetName()) {
 				entries.get(i).amount += 1;
 				return;
 			}
@@ -32,7 +32,7 @@ public class ShoppingCart {
 
 		int foundIndex = -1;
 		for(int i = 0; i < entries.size(); i++) {
-			if (entries.get(i).product.name == product.name) {
+			if (entries.get(i).product.GetName() == product.GetName()) {
 				foundIndex = i;
 				break;
 			}
@@ -55,7 +55,7 @@ public class ShoppingCart {
     public double GetTotal() {
     	double total = 0;
     	for(int i = 0; i < entries.size(); i++) {
-			total += entries.get(i).amount * entries.get(i).product.price;
+			total += entries.get(i).amount * entries.get(i).product.GetPrice();
 		}
 		return total;
     }
