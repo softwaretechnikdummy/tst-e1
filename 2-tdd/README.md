@@ -32,3 +32,10 @@ Nachdem ich die Funktion so implementiert hatte, dass sie die Tests besteht, hab
 Diese Funktion war wirklich sehr simpel und ich schreibe nicht mehr dazu.
 
 ![alt text](grafik-3.png)
+
+### Checkout
+Okay, diese Funktion war noch simpler, als `GetTotal`. Aber man muss natürlich dazu sagen, dass es sich hier um keine wirkliche Checkout-Funktion sondern eher um einen Platzhalter im Rahmen des begrenzten Projektrahmens handelt. Denn die Checkout-Funktion soll nur beispielhaft den Warenkorb leeren. Ein Kauf-Prozess wäre in der Realität natürlich Teil des Checkouts und wahrscheinlich der komplexeste Prozess des gesamten Projekts.
+
+Aber tatsächlich sehen wir jetzt endlich den grünen Balken, mal schauen, wie der Realitätstest mit der GUI jetzt abläuft.
+
+![alt text](grafik-4.png)
