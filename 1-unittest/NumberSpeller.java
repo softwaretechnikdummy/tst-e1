@@ -20,7 +20,6 @@ public class NumberSpeller {
      * @return languages as String array
      */
     String[] getLanguages() {
-    	
 		return (String[]) translations.keySet().toArray(new String[translations.size()]);
 	}
     
@@ -35,7 +34,7 @@ public class NumberSpeller {
     		throw new IllegalArgumentException("No translation exists for the given language");
     	}
     	
-    	if (numbers.isEmpty()) {
+    	if (numbers == null || numbers.isEmpty()) {
     		throw new IllegalArgumentException("Input must contain at least one digit from 0-9");
     	}
     	
