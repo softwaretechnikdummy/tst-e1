@@ -1,0 +1,9 @@
+# Erste Idee
+Als erstes habe ich mir aufgemalt, wie ich mir das Programm vorstelle:
+<img width="1700" height="1280" alt="grafik" src="https://github.com/user-attachments/assets/d7cbc0f1-75e9-4ba9-93e0-1c1a313aee38" />
+
+## Grundstruktur
+In meinem ersten Commit nach der Erstellung der README.md sehen Sie meine erste Struktur, die bereits eine vollständige UI implementiert.
+Die Klassen `Product`, `ShoppingCart` und `ShoppingCartEntry` bilden die logische Struktur.
+Es fehlt jetzt lediglich die Implementation der Klasse `ShoppingCartEntry`. Ihre Methoden habe ich mir aber bereits überlegt und diese auch schon in der UI implementiert.
+Als nächstes werde ich mir die Tests für die Klasse überlegen und dann wie gewünscht die Features Schritt für Schritt implementieren.
