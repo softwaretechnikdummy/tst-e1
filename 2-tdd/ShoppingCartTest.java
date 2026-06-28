@@ -1,24 +1,29 @@
 package application;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.mockito.Mockito.*;
+
+import java.io.Console;
+
 class ShoppingCartTest {
 	ShoppingCart cart;
 	
-	Product[] products = { 
-		new Product("Sternburg Export 0,5l", 0.69),
-		new Product("Sternburg Export 20x0,5l", 9.99),
-		new Product("Erdinger Weissbier alkoholfrei 0,5l", 1.19),
-		new Product("Corona Cero Bier alkoholfrei 0,335l", 1.45),
-		new Product("Club-Mate 0,5l", 1.09)
-	};
+	Product[] products;
 
 	@BeforeEach
 	void setUp() throws Exception {
+		Product product1_mock = mock(Product.class);
+	    when(product1_mock.GetName()).thenReturn("Sternburg Export 0,5l");
+	    when(product1_mock.GetPrice()).thenReturn(0.69);
+		Product product2_mock = mock(Product.class);
+	    when(product2_mock.GetName()).thenReturn("Sternburg Export 20x0,5l");
+	    when(product2_mock.GetPrice()).thenReturn(9.99);
+	    
+	    products = new Product[] { product1_mock, product2_mock };
+		
 	}
 
 	@Test
@@ -34,10 +39,10 @@ class ShoppingCartTest {
 		Assertions.assertEquals(1, cart.entries.get(0).amount); // amount must be 1
 		Assertions.assertEquals(products[0], cart.entries.get(0).product); // just added product should match
 
-		cart.AddProduct(products[2]);
+		cart.AddProduct(products[1]);
 		Assertions.assertEquals(2, cart.entries.size()); // cart should contain 2 entries now
 		Assertions.assertEquals(1, cart.entries.get(1).amount); // amount must be 1
-		Assertions.assertEquals(products[2], cart.entries.get(1).product); // just added product should match
+		Assertions.assertEquals(products[1], cart.entries.get(1).product); // just added product should match
 
 		cart.AddProduct(products[0]);
 		Assertions.assertEquals(2, cart.entries.size()); // cart should still contain 2 entries because same product added
@@ -75,13 +80,13 @@ class ShoppingCartTest {
 		Assertions.assertEquals(0, cart.GetTotal()); // cart total should be 0 first
 		
 		cart.AddProduct(products[0]);
-		Assertions.assertEquals(products[0].price, cart.GetTotal()); // cart total should equal product total
+		Assertions.assertEquals(products[0].GetPrice(), cart.GetTotal()); // cart total should equal product total
 		
 		cart.AddProduct(products[0]);
-		Assertions.assertEquals(products[0].price * 2, cart.GetTotal()); // cart total should equal double the product total
+		Assertions.assertEquals(products[0].GetPrice() * 2, cart.GetTotal()); // cart total should equal double the product total
 		
 		cart.AddProduct(products[1]);
-		Assertions.assertEquals(products[0].price * 2 + products[1].price, cart.GetTotal()); // cart total should equal double the product total + the other product total
+		Assertions.assertEquals(products[0].GetPrice() * 2 + products[1].GetPrice(), cart.GetTotal()); // cart total should equal double the product total + the other product total
 	}
 
 	@Test
