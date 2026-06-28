@@ -53,7 +53,11 @@ public class ShoppingCart {
 	}
     
     public double GetTotal() {
-		return 0;
+    	double total = 0;
+    	for(int i = 0; i < entries.size(); i++) {
+			total += entries.get(i).amount * entries.get(i).product.price;
+		}
+		return total;
     }
     
     public void Checkout() {
