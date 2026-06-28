@@ -7,3 +7,11 @@ In meinem ersten Commit nach der Erstellung der README.md sehen Sie meine erste 
 Die Klassen `Product`, `ShoppingCart` und `ShoppingCartEntry` bilden die logische Struktur.
 Es fehlt jetzt lediglich die Implementation der Klasse `ShoppingCartEntry`. Ihre Methoden habe ich mir aber bereits überlegt und diese auch schon in der UI implementiert.
 Als nächstes werde ich mir die Tests für die Klasse überlegen und dann wie gewünscht die Features Schritt für Schritt implementieren.
+
+## Tests
+Die Tests habe ich mir überlegt, sie sind womöglich nicht vollständig. Während des Schreibens sind mir immer wieder neue Dinge eingefallen.
+Aber die Grundanforderungen werden definitiv klar und ich werde jetzt im nächsten Schritt alle Funktionieren so implementieren, dass alle Tests bestanden werden.
+Danach werde ich das Programm mittels der UI testen und sehen, wie vollständig meine Tests denn dann wirklich waren!
+
+![alt text](grafik.png)
+
