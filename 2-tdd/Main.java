@@ -44,11 +44,17 @@ public class Main extends Application {
         
         lblArticles.setText("Artikel:");
         lblShoppingCart.setText("Warenkorb:");
+		Button checkoutButton = new Button("Bezahlen");
+		checkoutButton.setOnAction(event -> {
+			shoppingCart.Checkout();
+			redrawShoppingCart();
+	    });
         
 
         // position UI elements along the grid
         grid.add(lblArticles, 		0, 0);
         grid.add(lblShoppingCart, 	1, 0);
+        grid.add(checkoutButton, 1, 2);
 
         VBox productCatalogue = new VBox(5);
         productCatalogue.setAlignment(Pos.CENTER_LEFT);
@@ -79,6 +85,7 @@ public class Main extends Application {
 	}
 	
 	public void redrawShoppingCart() {
+	    shoppingCartBox.getChildren().clear();
 		for (ShoppingCartEntry entry : shoppingCart.entries) {
 			Label label = new Label(entry.product.name + " - " + entry.product.price);
 			Button removeButton = new Button("Entfernen");
@@ -94,7 +101,7 @@ public class Main extends Application {
 				shoppingCart.ChangeProductAmount(entry.product, entry.amount - 1);
 				redrawShoppingCart();
 		    });
-			subtractButton.setOnAction(event -> {
+			addButton.setOnAction(event -> {
 				shoppingCart.ChangeProductAmount(entry.product, entry.amount + 1);
 				redrawShoppingCart();
 		    });
@@ -102,7 +109,6 @@ public class Main extends Application {
 			HBox row = new HBox(5); // spacing between button-label-button
 		    row.setAlignment(Pos.CENTER_LEFT);
 		    row.getChildren().addAll(label, removeButton, subtractButton, currentAmountLabel, addButton);
-		    shoppingCartBox.getChildren().clear();
 		    shoppingCartBox.getChildren().add(row);
 		}
 	}
