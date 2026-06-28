@@ -61,6 +61,6 @@ public class ShoppingCart {
     }
     
     public void Checkout() {
-    	
+    	entries.clear();
     }
 }
