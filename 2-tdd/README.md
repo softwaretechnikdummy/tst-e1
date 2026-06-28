@@ -39,3 +39,9 @@ Okay, diese Funktion war noch simpler, als `GetTotal`. Aber man muss natürlich 
 Aber tatsächlich sehen wir jetzt endlich den grünen Balken, mal schauen, wie der Realitätstest mit der GUI jetzt abläuft.
 
 ![alt text](grafik-4.png)
+
+## Anpassungen GUI & Ergebnis
+Tatsächlich fiel beim Testen der GUI dann noch auf, dass ich einen Logikfehler beim Visualisieren des Warenkorbs eingebaut hatte. Den habe ich behoben und zusätzlich noch einen "Bezahlen"-Button sowie die Anzeige des Warenkorbpreises hinzugefügt.
+Nach meinem Test bin ich der Auffassung, dass das Programm fehlerfrei funktioniert.
+
+![alt text](./result.gif)
