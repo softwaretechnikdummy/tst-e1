@@ -1,6 +1,8 @@
 package application;
 	
 
+import java.util.Locale;
+
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -43,7 +45,7 @@ public class Main extends Application {
         grid.setAlignment(Pos.CENTER);
         
         lblArticles.setText("Artikel:");
-        lblShoppingCart.setText("Warenkorb:");
+        lblShoppingCart.setText("Warenkorb (0,00 €):");
 		Button checkoutButton = new Button("Bezahlen");
 		checkoutButton.setOnAction(event -> {
 			shoppingCart.Checkout();
@@ -111,6 +113,8 @@ public class Main extends Application {
 		    row.getChildren().addAll(label, removeButton, subtractButton, currentAmountLabel, addButton);
 		    shoppingCartBox.getChildren().add(row);
 		}
+		
+		lblShoppingCart.setText("Warenkorb ("+String.format(Locale.GERMANY, "%.2f", shoppingCart.GetTotal())+" €);");
 	}
 	
 	@Override
