@@ -21,3 +21,9 @@ Hier war die Implementierung eigentlich straight-forward. Aber dann fiel mir auf
 Der Test `testAddProduct` glückt nun bereits. Ein Refactoring ist meiner Meinung nach überflüssig.
 
 ![alt text](grafik-1.png)
+
+### ChangeProductAmount
+Die Funktion erfüllt gleich drei Zwecke. Sie muss erstens die Anzahl von Produkten bei bestehenden Einträge im Warenkorb anpassen. Desweiteren muss sie auch neue Einträge hinzufügen, wenn das Produkt noch nicht im Warenkorb ist. Zu guter Letzt muss das Produkt bei einer gewünschten Anzahl von 0 dann wieder aus dem Warenkorb entfernt werden.
+Nachdem ich die Funktion so implementiert hatte, dass sie die Tests besteht, habe ich noch schnell ein Refactoring hinterhergeschoben, bei dem ich duplizierten Code aus der Methode entfernt habe.
+
+![alt text](grafik-2.png)
