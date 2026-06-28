@@ -29,27 +29,20 @@ public class ShoppingCart {
     	if (newAmount < 0) {
     		throw new IllegalArgumentException("amount cannot be less than zero");
     	}
+
+		int foundIndex = -1;
+		for(int i = 0; i < entries.size(); i++) {
+			if (entries.get(i).product.name == product.name) {
+				foundIndex = i;
+				break;
+			}
+		}
     	
     	if (newAmount == 0) {
-    		int foundIndex = -1;
-    		for(int i = 0; i < entries.size(); i++) {
-    			if (entries.get(i).product.name == product.name) {
-    				foundIndex = i;
-    				break;
-    			}
-    		}
     		if (foundIndex != -1) { // Product is found and needs to be actively removed
     			entries.remove(foundIndex);
     		}
     	} else {
-    		int foundIndex = -1;
-    		for(int i = 0; i < entries.size(); i++) {
-    			if (entries.get(i).product.name == product.name) {
-    				foundIndex = i;
-    				break;
-    			}
-    		}
-    		
     		if (foundIndex != -1) { // Product is found and needs to be amount adjusted
     			entries.get(foundIndex).amount = newAmount;
     		} else { // Product needs to be added
