@@ -27,3 +27,8 @@ Die Funktion erfüllt gleich drei Zwecke. Sie muss erstens die Anzahl von Produk
 Nachdem ich die Funktion so implementiert hatte, dass sie die Tests besteht, habe ich noch schnell ein Refactoring hinterhergeschoben, bei dem ich duplizierten Code aus der Methode entfernt habe.
 
 ![alt text](grafik-2.png)
+
+### GetTotal
+Diese Funktion war wirklich sehr simpel und ich schreibe nicht mehr dazu.
+
+![alt text](grafik-3.png)
