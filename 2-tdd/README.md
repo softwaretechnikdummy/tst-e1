@@ -15,3 +15,9 @@ Danach werde ich das Programm mittels der UI testen und sehen, wie vollständig 
 
 ![alt text](grafik.png)
 
+### AddProduct
+Hier war die Implementierung eigentlich straight-forward. Aber dann fiel mir auf, dass ein normales Array für `entries` nicht tauglich war, da ich ja dynamisch Elemente hinzufügen wollte. Also habe ich umgerüstet auf eine `ArrayList` und somit musste ich auch die Tests anpassen, die direkt auf die Variable zugreifen.
+
+Der Test `testAddProduct` glückt nun bereits. Ein Refactoring ist meiner Meinung nach überflüssig.
+
+![alt text](grafik-1.png)
