@@ -23,7 +23,40 @@ public class ShoppingCart {
 	}
 	
 	public void ChangeProductAmount(Product product, int newAmount) {
-		
+    	if (product == null) {
+    		throw new IllegalArgumentException("Product cannot be null");
+    	}
+    	if (newAmount < 0) {
+    		throw new IllegalArgumentException("amount cannot be less than zero");
+    	}
+    	
+    	if (newAmount == 0) {
+    		int foundIndex = -1;
+    		for(int i = 0; i < entries.size(); i++) {
+    			if (entries.get(i).product.name == product.name) {
+    				foundIndex = i;
+    				break;
+    			}
+    		}
+    		if (foundIndex != -1) { // Product is found and needs to be actively removed
+    			entries.remove(foundIndex);
+    		}
+    	} else {
+    		int foundIndex = -1;
+    		for(int i = 0; i < entries.size(); i++) {
+    			if (entries.get(i).product.name == product.name) {
+    				foundIndex = i;
+    				break;
+    			}
+    		}
+    		
+    		if (foundIndex != -1) { // Product is found and needs to be amount adjusted
+    			entries.get(foundIndex).amount = newAmount;
+    		} else { // Product needs to be added
+    			ShoppingCartEntry entry = new ShoppingCartEntry(product, newAmount);
+    			entries.add(entry);
+    		}
+    	}
 	}
     
     public double GetTotal() {
